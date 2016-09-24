@@ -23,7 +23,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var labelResults: UITextView!
     @IBOutlet weak var faceResults: UITextView!
     
-    var API_KEY = "YOUR_API_KEY"
+    var API_KEY = "AIzaSyCwrq51oDjE4rLNKDoIWAfn1DNG5qpsTqw"
 
     @IBAction func loadImageButtonTapped(sender: UIButton) {
         imagePicker.allowsEditing = false
@@ -52,7 +52,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         UIGraphicsBeginImageContext(imageSize)
         image.drawInRect(CGRectMake(0, 0, imageSize.width, imageSize.height))
         let newImage = UIGraphicsGetImageFromCurrentImageContext()
-        let resizedImage = UIImagePNGRepresentation(newImage)
+        let resizedImage = UIImagePNGRepresentation(newImage!)
         UIGraphicsEndImageContext()
         return resizedImage!
     }
